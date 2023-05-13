@@ -1,4 +1,4 @@
-#include "gridMap.h"
+#include "gridMap.hpp"
 
 gridMap::gridMap() { //cannot have return type as it is a constructor
    moves=0;

@@ -1,5 +1,5 @@
-#include "play.h"
-#include "gridScene.h"
+#include "play.hpp"
+#include "gridScene.hpp"
 #include "threepp/threepp.hpp"
 
 using namespace threepp;

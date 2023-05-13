@@ -1,8 +1,8 @@
 //
 // Created by Ria Sharma on 12/05/23.
 //
-#ifndef LIGHTSOFF_PLAY_H
-#define LIGHTSOFF_PLAY_H
+#ifndef LIGHTSOFF_PLAY_HPP
+#define LIGHTSOFF_PLAY_HPP
 #include "threepp/threepp.hpp"
 using namespace threepp;
 
@@ -19,4 +19,4 @@ private:
 
 
 
-#endif //LIGHTSOFF_PLAY_H
+#endif //LIGHTSOFF_PLAY_HPP

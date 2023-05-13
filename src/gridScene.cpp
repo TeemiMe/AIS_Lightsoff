@@ -1,12 +1,11 @@
-#include "gridScene.h"
-#include "mouseEvent.h"
-#include "play.h"
+#include "gridScene.hpp"
+#include "mouseEvent.hpp"
+#include "play.hpp"
 #include <iostream>
 using namespace threepp;
 
 BoxScene::BoxScene() :
-        m_canvas(),
-        m_renderer(m_canvas),
+
         m_scene(Scene::create()),
         m_camera(OrthographicCamera::create(0, 6, 0, 6 , 0.1, 1000)),
         m_geometry(BoxGeometry::create()),
@@ -14,13 +13,10 @@ BoxScene::BoxScene() :
         m_yellowMaterial(MeshBasicMaterial::create()),
         m_whiteMaterial(MeshBasicMaterial::create()),
         m_boxes(5, std::vector<std::shared_ptr<Mesh>>(5)),
-        m_mouseListener(m_canvas),
         m_rd(),
         m_gen(m_rd()),
         m_dis(0, 1)
 {
-    m_canvas.addMouseListener(&m_mouseListener);
-    m_renderer.setClearColor(Color::black);
     m_camera->position.set(0,0,1);
     m_camera->lookAt(0,0,0);
     m_material->color.setRGB(1, 1, 1);
@@ -56,13 +52,6 @@ void BoxScene::changeBoxColors() {
     }
 }
 
-
-void BoxScene::animate() {
-    m_canvas.animate([&](float dt) -> void {
-        std::cout<< m_mouseListener.mouseClick() << std::endl;
-    },
-        m_renderer.render(m_scene, m_camera));
-    }
 void BoxScene::run() {
     play playObject;
     createBoxes();
